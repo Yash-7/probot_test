@@ -10,5 +10,9 @@ module.exports = (robot) => {
     // Post a comment on the issue
     return context.github.issues.createComment(params)
   })
+  robot.on('push', async context => {
+    // Code was pushed to the repo, what should we do with it?
+    robot.log("pushed");
+  })
 
 }
